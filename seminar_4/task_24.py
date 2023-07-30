@@ -7,36 +7,28 @@
 # находясь перед некоторым кустом заданной во входном файле грядки.
 
 
-# N = int(input('Введите количество кустов на грядке: '))
-# arr = list()
-# for i in range(N):
-#     a = int(input('Введите количество ягод на кусте: '))
-#     arr.append(a)
-# arr_count = list()
-# for i in range(len(arr)):
-#        arr_count.append(arr[i] + arr[i-1] + arr[i-2])
-# print(f'Максимальное число ягод: {(max(arr_count))}')
+N = int(input('Введите количество кустов на грядке: '))
+arr = list()
+for i in range(N):
+    a = int(input('Введите количество ягод на кусте: '))
+    arr.append(a)
+count = list()
+for i in range(len(arr)):
+       count.append(arr[i] + arr[i-1] + arr[i-2])
+print(f'Максимальное число ягод: {(max(count))}')
 
-# from random import randint as rd
-# N = int(input('Введите количество кустов на грядке: '))
-# arr = list()
-# for i in range(N):
-#     arr.append(rd(1,10))
-# print(arr)
-# count = list()
-# for i in range(len(arr)):
-#        count.append(arr[i] + arr[i-1] + arr[i-2])
-# print(f'Максимальное число ягод: {(max(count))}')
+
+# если количество ягод на кустах случайные цифры, не вводимые пользователем
 
 from random import randint as rd
-N = int(input('Введите кол-во кустов на грядке: '))
-bushes = list()
+N = int(input('Введите количество кустов на грядке: '))
+arr = list()
 for i in range(N):
-    bushes.append(rd(1,10))
-print(bushes)
-bushes = bushes + bushes[:2]
-sum = 0
-for i in range(N):
-    sum = max(sum, bushes[i] + bushes[i+1] + bushes[i+2])
-print(f"Максимальное число ягод: {sum}")
+    arr.append(rd(1,10))
+print(arr)
+count = list()
+for i in range(len(arr)):
+       count.append(arr[i] + arr[i-1] + arr[i-2])
+print(f'Максимальное число ягод: {(max(count))}')
+
 
